@@ -1,27 +1,31 @@
-<div id="<%= dom_id item %>">
-  <p>
-    <strong>Nome:</strong>
-    <%= item.nome %>
-  </p>
+<div id="<%= dom_id item %>" class="card_itens">
+  <div style="background-color: white; border-radius: 5%; font-size: 12px">
 
-  <p>
-    <strong>Preco unitario:</strong>
-    <%= item.preco_unitario %>
-  </p>
+    <p><%= image_tag "bslogo1.png", class: "img_items" %></p>
 
-  <p>
-    <strong>Descricao:</strong>
-    <%= item.descricao %>
-  </p>
+    <h3>
+      <strong>Nome:</strong>
+      <%= item.nome %>
+    </h3>
 
-  <p>
-    <strong>Quantidade:</strong>
-    <%= item.quantidade %>
-  </p>
+    <h4>
+      <strong>Preço:</strong>
+      <%= item.preco_unitario %>
+    </h4>
+<!--    <p>-->
+<!--      <strong>Descricao:</strong>-->
+      <%#= item.descricao %>
+<!--    </p>-->
 
-  <p>
-    <strong>Categoria:</strong>
-    <%= item.categoria %>
-  </p>
+  <!--  <p>-->
+  <!--    <strong>Quantidade:</strong>-->
+      <%#= item.quantidade %>
+  <!--  </p>-->
 
+  <!--  <p>-->
+  <!--    <strong>Categoria:</strong>-->
+      <%#= item.categoria %>
+  <!--  </p>-->
+    <%= link_to "Show this item", item %>
+  </div>
 </div>

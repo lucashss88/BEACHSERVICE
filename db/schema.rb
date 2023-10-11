@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_10_235609) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_11_010305) do
   create_table "clients", force: :cascade do |t|
     t.string "nome"
     t.string "email"
     t.string "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_category_enums", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

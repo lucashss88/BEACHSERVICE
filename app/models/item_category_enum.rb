@@ -1,0 +1,2 @@
+class ItemCategoryEnum < ApplicationRecord
+end

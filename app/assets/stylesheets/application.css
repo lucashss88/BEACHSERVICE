@@ -28,9 +28,15 @@
 }
 
 .display_show{
-    display: inline-block;
-    margin: 15px;
-
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.div_btn_navbar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 
 .btn_cadastrar{
@@ -51,4 +57,21 @@
 
 .form_client{
     margin-bottom: 10px;
+}
+
+.card_itens{
+    width: 180px;
+    height: 230px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.img_logo_cardapio{
+    width: 70px;
+    margin-top: -20px;
+}
+
+.img_items{
+    width: 90px;
 }

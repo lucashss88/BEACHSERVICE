@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "items/index"
   resources :payments
   resources :orders
   resources :items
