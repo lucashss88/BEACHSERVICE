@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+ }
+ .index_show{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+     
+}
+
+.display_show{
+    display: inline-block;
+    margin: 15px;
+
+}
+
+.btn_cadastrar{
+    background-color: green;
+    color: white;
+    size: 200px;
+    font-size: 25px;
+    border-radius: 6%;
+}
+
+.btn_login{
+    background-color: green;
+    color: white;
+    size: 100px;
+    font-size: 15px;
+    border-radius: 5%;
+}
+
+.form_client{
+    margin-bottom: 10px;
+}
