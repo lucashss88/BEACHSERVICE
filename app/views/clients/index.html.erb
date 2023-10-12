@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="index_show">
+    <p style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
+    <h1>Clients</h1>
 
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
-  <% end %>
+    <div id="clients">
+      <% @clients.each do |client| %>
+        <%= render client %>
+        <p>
+          <%= link_to "Show this client", client %>
+        </p>
+      <% end %>
+    </div>
+
+    <div style="margin: 10px">
+    <%= link_to "New client", new_client_path %>
+    </div>
+
+    <div style="margin: 10px">
+      <%= link_to "Voltar ao cardápio", items_index_path %>
+    </div>
 </div>
-
-<%= link_to "New client", new_client_path %>

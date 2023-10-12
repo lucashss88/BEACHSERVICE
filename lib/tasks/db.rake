@@ -6,8 +6,7 @@ namespace :db do
         nome: Faker::Food.dish,
         preco_unitario: Faker::Number.between(from: 1, to: 200),
         descricao: Faker::Food.description,
-        quantidade: Faker::Number.between(from: 1, to: 200),
-        categoria: Faker::Food.ethnic_category
+        quantidade: Faker::Number.between(from: 1, to: 200)
       )
     end
   end

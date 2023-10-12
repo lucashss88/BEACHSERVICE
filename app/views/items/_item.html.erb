@@ -2,7 +2,7 @@
     <% if controller_name == 'items' && action_name == 'index' %>
       <div id="<%= dom_id item %>" class="card_itens">
         <div style="background-color: white; border-radius: 5%; font-size: 12px">
-          <p><%= image_tag "bslogo2.png", class: "img_items" %></p>
+          <p><%= image_tag "taco.png", class: "img_items" %></p>
 
           <h3>
             <strong>Nome:</strong>
@@ -13,15 +13,16 @@
             <strong>Preço:</strong>
             <%= item.preco_unitario %>
           </h4>
-          <%= link_to "Show this item", item %>
+          <%= link_to "Ver detalhes", item %>
         </div>
       </div>
     <% end %>
 
     <% if controller_name == 'items' && action_name == 'show' %>
       <div class="card_itens_show">
-        <p><%= image_tag "bslogo2.png", class: "img_items" %></p>
-
+        <div class="card_img_show">
+          <p><%= image_tag "dish.png", class: "img_items_show" %></p>
+        </div>
         <h3>
           <strong>Nome:</strong>
           <%= item.nome %>
@@ -42,9 +43,4 @@
         </p>
       </div>
     <% end %>
-
-<!--    <p>-->
-<!--      <strong>Categoria:</strong>-->
-      <%#= item.categoria %>
-<!--    </p>-->
 
