@@ -1,31 +1,50 @@
-<div id="<%= dom_id item %>" class="card_itens">
-  <div style="background-color: white; border-radius: 5%; font-size: 12px">
 
-    <p><%= image_tag "bslogo1.png", class: "img_items" %></p>
+    <% if controller_name == 'items' && action_name == 'index' %>
+      <div id="<%= dom_id item %>" class="card_itens">
+        <div style="background-color: white; border-radius: 5%; font-size: 12px">
+          <p><%= image_tag "bslogo2.png", class: "img_items" %></p>
 
-    <h3>
-      <strong>Nome:</strong>
-      <%= item.nome %>
-    </h3>
+          <h3>
+            <strong>Nome:</strong>
+            <%= item.nome %>
+          </h3>
 
-    <h4>
-      <strong>Preço:</strong>
-      <%= item.preco_unitario %>
-    </h4>
+          <h4>
+            <strong>Preço:</strong>
+            <%= item.preco_unitario %>
+          </h4>
+          <%= link_to "Show this item", item %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if controller_name == 'items' && action_name == 'show' %>
+      <div class="card_itens_show">
+        <p><%= image_tag "bslogo2.png", class: "img_items" %></p>
+
+        <h3>
+          <strong>Nome:</strong>
+          <%= item.nome %>
+        </h3>
+
+        <h4>
+          <strong>Preço:</strong>
+          <%= item.preco_unitario %>
+        </h4>
+        <p>
+          <strong>Descricao:</strong>
+          <%= item.descricao %>
+        </p>
+
+        <p>
+          <strong>Quantidade:</strong>
+          <%= item.quantidade %>
+        </p>
+      </div>
+    <% end %>
+
 <!--    <p>-->
-<!--      <strong>Descricao:</strong>-->
-      <%#= item.descricao %>
+<!--      <strong>Categoria:</strong>-->
+      <%#= item.categoria %>
 <!--    </p>-->
 
-  <!--  <p>-->
-  <!--    <strong>Quantidade:</strong>-->
-      <%#= item.quantidade %>
-  <!--  </p>-->
-
-  <!--  <p>-->
-  <!--    <strong>Categoria:</strong>-->
-      <%#= item.categoria %>
-  <!--  </p>-->
-    <%= link_to "Show this item", item %>
-  </div>
-</div>

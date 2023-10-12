@@ -32,6 +32,7 @@
     flex-direction: row;
     text-align: center;
 }
+
 .div_btn_navbar{
     width: 100%;
     display: flex;
@@ -62,6 +63,15 @@
 .card_itens{
     width: 180px;
     height: 230px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.card_itens_show{
+    margin-left: 42%;
+    width: 400px;
+    height: 500px;
     border: 1px solid black;
     padding: 10px;
     border-radius: 5%;
