@@ -1,0 +1,35 @@
+<div>
+  <div class="display_show" style="width: 100%; border-bottom: 1px solid darkgrey">
+    <div class="display_show">
+      <h3>CARDÁPIO</h3>
+      <p><%= image_tag "bslogo1.png", class: "img_logo_cardapio" %></p>
+    </div>
+    <div class="div_btn_navbar">
+      <div style="margin: 5px">
+        <%= button_tag "Chat" %>
+      </div>
+      <div style="margin: 5px">
+        <%= button_tag "Pedido" %>
+      </div>
+      <div style="margin: 5px">
+        <%= button_to "Perfil", clients_path, method: :get %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>Categorias</h3>
+  </div>
+  <div class="index_show">
+      <p style="color: green"><%= notice %></p>
+      <div id="items" class="display_show" style="flex-wrap: wrap">
+        <% @items.each do |item| %>
+          <div class="display_show" style="margin: 10px">
+            <%= render item %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to "New item", new_item_path %>
+  </div>
+</div>
