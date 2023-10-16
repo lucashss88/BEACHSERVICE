@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.string :descricao
       t.integer :quantidade
       t.string :categoria
+      t.references :category, null: false, foreign_key: true
 
       t.timestamps
     end

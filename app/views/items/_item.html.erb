@@ -4,10 +4,10 @@
         <div style="background-color: white; border-radius: 5%; font-size: 12px">
           <p><%= image_tag "taco.png", class: "img_items" %></p>
 
-          <h3>
+          <h4>
             <strong>Nome:</strong>
             <%= item.nome %>
-          </h3>
+          </h4>
 
           <h4>
             <strong>Preço:</strong>
@@ -38,9 +38,13 @@
         </p>
 
         <p>
-          <strong>Quantidade:</strong>
-          <%= item.quantidade %>
+          <strong>Categoria:</strong>
+          <%= item.category.nome %>
         </p>
+<!--        <p>-->
+<!--          <strong>Quantidade:</strong>-->
+          <%#= item.quantidade %>
+<!--        </p>-->
       </div>
     <% end %>
 

@@ -65,7 +65,7 @@
     color: white;
     width: 150px;
     height: 50px;
-    font-size: 20px;
+    font-size: 17px;
     border-radius: 5%;
 }
 
@@ -80,8 +80,13 @@
     font-size: 30px;
 }
 
-.card_form_client{
+.card_form_client {
     margin-top: 50px;
+}
+
+.card_show_client{
+    margin-top: 50px;
+    font-size: 35px;
 }
 
 .card_home_maior{
@@ -116,6 +121,10 @@
     margin-left: 15px;
 }
 
+.card_itens h4{
+    font-size: 16px;
+}
+
 .card_itens_show{
     margin-left: 37%;
     width: 400px;
@@ -132,9 +141,13 @@
     border-radius: 5%;
 }
 
+.card_categories{
+    margin-right: 20px;
+}
+
 .img_logo_cardapio{
     width: 70px;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 .img_logo_home{
