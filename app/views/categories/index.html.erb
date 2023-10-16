@@ -1,0 +1,33 @@
+<div>
+  <div class="display_show" style="width: 100%; border-bottom: 1px solid darkgrey">
+    <div class="display_show">
+      <h3>CATEGORIAS</h3>
+      <p><%= image_tag "bslogo1.png", class: "img_logo_cardapio" %></p>
+    </div>
+    <div class="div_btn_navbar">
+      <div style="margin: 5px">
+        <%= button_tag "Chat" %>
+      </div>
+      <div style="margin: 5px">
+        <%= button_tag "Pedido" %>
+      </div>
+      <div style="margin: 5px">
+        <%= button_to "Perfil", clients_path, method: :get %>
+      </div>
+    </div>
+  </div>
+  <div class="index_show">
+    <p style="color: green"><%= notice %></p>
+    <div id="categories" class="display_show" style="flex-wrap: wrap">
+      <% @categories.each do |category| %>
+        <div class="display_show" style="margin: 10px">
+          <%= render category %>
+          <p>
+            <%= link_to "Show this category", category %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "New category", new_category_path %>
+  </div>
+</div>
