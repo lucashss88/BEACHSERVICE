@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  */
 
  body{
@@ -42,21 +43,68 @@
 .btn_cadastrar{
     background-color: green;
     color: white;
-    size: 200px;
-    font-size: 25px;
+    width: 150px;
+    height: 70px;
+    font-size: 18px;
     border-radius: 6%;
+    margin: 5px;
 }
 
 .btn_login{
     background-color: green;
     color: white;
-    size: 100px;
-    font-size: 15px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
     border-radius: 5%;
+
+}
+
+.btn_destroy{
+    background-color: red;
+    color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5%;
+}
+
+.btn_perfil_cardapio{
+    width: 70px;
+    height: 50px;
+    font-size: 15px;
 }
 
 .form_client{
     margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.card_form_client{
+    margin-top: 50px;
+}
+
+.card_home_maior{
+    margin-left: 28%;
+    width: 40%;
+    height: 85%;
+    margin-top: 3%;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.card_home{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.card_home h1{
+    margin: 1px;
+    font-family: helvetica, verdana, arial, sans-serif;
+    font-weight: bold;
 }
 
 .card_itens{
@@ -89,6 +137,12 @@
     margin-top: -20px;
 }
 
+.img_logo_home{
+    width: 50px;
+    margin-top: 15%;
+    margin-left: 8%;
+}
+
 .img_items{
     width: 90px;
 }
@@ -103,4 +157,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 900px;
+}
+
+.img_background_home{
+    background-image: url("beachdraw.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 690px;
 }

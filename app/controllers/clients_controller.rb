@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show edit update destroy ]
 
+
   # GET /clients or /clients.json
   def index
     @clients = Client.all
@@ -55,6 +56,10 @@ class ClientsController < ApplicationController
       format.html { redirect_to clients_url, notice: "Client was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def last_client
+    @last_client = @clients.last
   end
 
   private

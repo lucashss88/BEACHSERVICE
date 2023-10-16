@@ -1,7 +1,18 @@
-<div class="index_show">
-  <h1>BEM VINDO</h1>
-  <h1>AO</h1>
-  <h3><%= image_tag "bslogo1.png" %></h3>
-  <h2><%= button_to "CADASTRE-SE", new_client_path, method: :get, class: "btn_cadastrar" %></h2>
-  
+<!-- popup
+<%# content_for :javascript do %>
+  <%#= javascript_include_tag 'custom' %>
+<%# end %>
+-->
+<div class="index_show img_background_home">
+  <div class="card_home_maior">
+    <div class="card_home">
+      <p class="img_logo_home"><%= image_tag "bslogo1.png" %></p>
+    </div>
+    <div style="margin-top: 20px">
+      <h2><%= button_to "CARDÁPIO", new_client_path, method: :get, class: "btn_cadastrar" %></h2>
+      <!-- popup
+     <h2><%#= link_to "Projeto", "#", id: "open-popup", class: "btn btn-primary" %></h2>
+      -->
+    </div>
+  </div>
 </div>

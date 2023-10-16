@@ -12,7 +12,9 @@
         <%= button_tag "Pedido" %>
       </div>
       <div style="margin: 5px">
-        <%= button_to "Perfil", clients_path, method: :get %>
+        <% nome = saudacao %>
+        <% id = last_id %>
+        <%= button_to nome, client_path(id), method: :get, class: "btn_perfil_cardapio" %>
       </div>
     </div>
   </div>

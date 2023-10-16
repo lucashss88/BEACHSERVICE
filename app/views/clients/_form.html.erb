@@ -10,23 +10,32 @@
       </ul>
     </div>
   <% end %>
-  
-  <div class="form_client">
-    <%= form.label :nome, style: "margin-right: 5%;" %>
-    <%= form.text_field :nome %>
-  </div>
+  <div class="card_form_client">
+    <div class="form_client">
+      <%= form.label :nome, style: "margin-right: 5%;" %>
+      <%= form.text_field :nome %>
+    </div>
 
-  <div class="form_client">
-    <%= form.label :email, style: "margin-right: 5%;"  %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="form_client">
+      <%= form.label :email, style: "margin-right: 5%;"  %>
+      <%= form.text_field :email %>
+    </div>
 
-  <div class="form_client">
-    <%= form.label :telefone, style: "margin-right: 5%;"  %>
-    <%= form.text_field :telefone %>
-  </div>
+    <div class="form_client">
+      <%= form.label :telefone, style: "margin-right: 5%;"  %>
+      <%= form.text_field :telefone %>
+    </div>
 
-  <div>
-    <%= button_to "CADASTRAR", items_index_path, method: :get, class: "btn_login", style: "margin-top: 5%;" %>
+    <% if controller_name == 'clients' && action_name == 'new' %>
+      <div style="width: 100%">
+        <%= button_to "CADASTRAR", items_index_path, method: :get, class: "btn_login", style: "margin-top: 5%;" %>
+      </div>
+    <% end %>
+
+    <% if controller_name == 'clients' && action_name == 'edit' %>
+      <div style="width: 100%">
+        <%= button_to "EDITAR", items_index_path, method: :get, class: "btn_login", style: "margin-top: 5%;" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
