@@ -1,12 +1,17 @@
-<div class="index_show">
-  <p style="color: green"><%= notice %></p>
+<div class="index_show img_background_home">
+  <div class="card_cadastro_maior">
+    <div class="card_cadastro">
+      <p style="color: green"><%= notice %></p>
 
-  <%= render @client %>
+      <%= render @client %>
 
-  <div class="card_form_client">
-    <%= link_to "Edit this client", edit_client_path(@client) %> |
-    <%= link_to "Back to menu", items_index_path %>
-    <%#= button_to "Destroy this client", @client, method: :delete, class: "btn_destroy" %>
+      <div class="card_form_client">
+        <%= link_to "Edit this client", edit_client_path(@client) %> |
+        <%= link_to "Back to menu", items_index_path %>
+        <%#= button_to "Destroy this client", @client, method: :delete, class: "btn_destroy" %>
 
+      </div>
+    </div>
   </div>
+
 </div>

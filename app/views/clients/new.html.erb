@@ -1,12 +1,17 @@
-<div class="index_show">
-  <h1>Cadastre-se</h1>
-
-  <div>
-    <%= render "form", client: @client %>
+<div class="index_show img_background_home">
+  <div class="card_cadastro_maior">
+    <div class="card_cadastro">
+      <div style="margin-top: 50px">
+        <h1>Cadastre-se</h1>
+        <%= render "form", client: @client %>
+      </div>
+      <br>
+      <div>
+        <i class="fas fa-arrow-left"></i>
+        <%= link_to "VOLTAR ", root_path %>
+      </div>
+    </div>
   </div>
-  <br>
+
   
-</div>
-<div class="card_form_client">
-    <%= link_to "VOLTAR ", root_path %>
 </div>

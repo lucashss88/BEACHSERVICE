@@ -1,7 +1,7 @@
 
     <% if controller_name == 'items' && action_name == 'index' %>
-      <div id="<%= dom_id item %>" class="card_itens">
-        <div style="background-color: white; border-radius: 5%; font-size: 12px">
+      <div id="<%= dom_id item %>" class="card_itens" style="background-color: white; border-radius: 5%; font-size: 12px">
+        <div>
           <p><%= image_tag "taco.png", class: "img_items" %></p>
 
           <h4>
@@ -41,10 +41,12 @@
           <strong>Categoria:</strong>
           <%= item.category.nome %>
         </p>
-<!--        <p>-->
-<!--          <strong>Quantidade:</strong>-->
-          <%#= item.quantidade %>
-<!--        </p>-->
+        <div class="display_show_items_order">
+          <label for="numbers_item"></label><input type="number" id="numbers_item" name="numbers_item" min="0" max="100" />
+          <div>
+            <%= button_tag "Add" %>
+          </div>
+        </div>
       </div>
     <% end %>
 

@@ -259,6 +259,7 @@ DEPENDENCIES
   debug
   devise
   faker
+  i18n
   importmap-rails
   jbuilder
   puma (~> 5.0)

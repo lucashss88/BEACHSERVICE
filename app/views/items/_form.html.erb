@@ -32,6 +32,11 @@
       <%= form.number_field :quantidade %>
     </div>
 
+    <div style="margin-bottom: 10px">
+      <%= form.label :category_id, style: "display: block" %>
+      <%= form.collection_select(:category_id, Category.all, :id, :nome, prompt: "Selecione uma categoria") %>
+    </div>
+
     <div>
       <%= form.submit %>
     </div>

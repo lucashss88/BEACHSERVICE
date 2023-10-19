@@ -33,6 +33,13 @@
     text-align: center;
 }
 
+.display_show_items_order{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
 .div_btn_navbar{
     width: 100%;
     display: flex;
@@ -40,7 +47,7 @@
     margin-right: 10px;
 }
 
-.btn_cadastrar{
+.btn_cardapio{
     background-color: green;
     color: white;
     width: 150px;
@@ -50,12 +57,22 @@
     margin: 5px;
 }
 
-.btn_login{
+.btn_cadastrar{
     background-color: green;
     color: white;
     width: 150px;
     height: 50px;
     font-size: 20px;
+    border-radius: 5%;
+
+}
+
+.btn_login{
+    background-color: blue;
+    color: white;
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
     border-radius: 5%;
 
 }
@@ -81,11 +98,12 @@
 }
 
 .card_form_client {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .card_show_client{
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 35px;
 }
 
@@ -96,6 +114,7 @@
     margin-top: 3%;
     background-color: white;
     border: 1px solid grey;
+    border-radius: 3%;
 }
 
 .card_home{
@@ -110,6 +129,25 @@
     margin: 1px;
     font-family: helvetica, verdana, arial, sans-serif;
     font-weight: bold;
+}
+
+.card_cadastro{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.card_cadastro_maior{
+    margin-left: 28%;
+    width: 40%;
+    height: 80%;
+    margin-top: 3%;
+    padding-top: 3%;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 3%;
 }
 
 .card_itens{
@@ -128,7 +166,7 @@
 .card_itens_show{
     margin-left: 37%;
     width: 400px;
-    height: 500px;
+    height: 520px;
     border: 1px solid black;
     padding: 10px;
     border-radius: 5%;
@@ -164,12 +202,16 @@
     width: 220px;
 }
 
-.img_background{
+.img_background_show{
     background-image: url("beachdraw.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 800px;
+}
+
+.img_background{
+    background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(24,24,124,1) 69%, rgba(0,0,0,1) 100%);
 }
 
 .img_background_home{
@@ -177,5 +219,5 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 690px;
+    height: 730px;
 }

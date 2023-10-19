@@ -1,12 +1,17 @@
-<div class="index_show">
-  <h1>Editing client</h1>
+<div class="index_show img_background_home">
+  <div class="card_cadastro_maior">
+    <div class="card_cadastro">
+      <h1>Editing client</h1>
 
-  <%= render "form", client: @client %>
+      <%= render "form", client: @client %>
 
-  <br>
+      <br>
 
-  <div>
-<!--    <%#= link_to "Show this client", @client %> |-->
-    <%= link_to "Back to client", client_path(@client) %>
+      <div>
+        <!--    <%#= link_to "Show this client", @client %> |-->
+        <%= link_to "Back to client", client_path(@client) %>
+      </div>
+    </div>
   </div>
+
 </div>

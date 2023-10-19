@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @item.build_category
   end
 
   # GET /items/1/edit
@@ -68,6 +69,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:nome, :preco_unitario, :descricao, :quantidade, :categoria)
+      params.require(:item).permit(:nome, :preco_unitario, :descricao, :quantidade, :category_id)
     end
 end

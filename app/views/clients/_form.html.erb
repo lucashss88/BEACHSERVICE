@@ -1,7 +1,7 @@
 <%= form_with(model: client) do |form| %>
   <% if client.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+      <h6><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h6>
 
       <ul>
         <% client.errors.each do |error| %>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+<!--  <div class="card_home_maior">-->
+<!--    <div class="card_home">-->
+
+<!--    </div>-->
+<!--  </div>-->
   <div class="card_form_client">
     <div class="form_client">
       <%= form.label :nome, style: "margin-right: 5%;" %>
@@ -28,14 +33,19 @@
 
     <% if controller_name == 'clients' && action_name == 'new' %>
       <div style="width: 100%">
-        <%= button_to "CADASTRAR", items_index_path, method: :get, class: "btn_login", style: "margin-top: 5%;" %>
+        <%= button_to "CADASTRAR", items_index_path, method: :get, class: "btn_cadastrar", style: "margin-top: 5%;" %>
+      </div>
+      <div class="index_show" style="margin-top: 20px">
+        <h6>Já possui cadastro? Faça o login.</h6>
+        <%= button_to "LOGIN", items_index_path, method: :get, class: "btn_login" %>
       </div>
     <% end %>
 
     <% if controller_name == 'clients' && action_name == 'edit' %>
       <div style="width: 100%">
-        <%= button_to "EDITAR", items_index_path, method: :get, class: "btn_login", style: "margin-top: 5%;" %>
+        <%= button_to "EDITAR", items_index_path, method: :get, class: "btn_cadastrar", style: "margin-top: 5%;" %>
       </div>
     <% end %>
+
   </div>
 <% end %>
