@@ -9,7 +9,7 @@
         <%= button_tag "Chat" %>
       </div>
       <div style="margin: 5px">
-        <%= button_tag "Pedido" %>
+        <%= button_to "Pedido", orders_path, method: :get %>
       </div>
       <div style="margin: 5px">
         <% nome = saudacao %>
@@ -19,12 +19,12 @@
     </div>
   </div>
 
-  <div style="margin-bottom: 40px">
-    <h4>Categorias</h4>
+  <div style="margin-bottom: 40px; margin-top: 10px">
+<!--    <h4>Categorias</h4>-->
     <%= list %>
 
   </div>
-  <div class="index_show img_background">
+  <div class="index_show">
       <p style="color: green"><%= notice %></p>
       <div id="items" class="display_show" style="flex-wrap: wrap">
         <% @items.each do |item| %>
@@ -36,4 +36,5 @@
 
       <%= link_to "New item", new_item_path %>
   </div>
+  <%= paginate @items %>
 </div>

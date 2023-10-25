@@ -51,6 +51,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem "faker"
 
+gem "kaminari"
+
 gem "bootstrap"
 
 gem "devise"

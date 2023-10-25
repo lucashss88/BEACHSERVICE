@@ -1,12 +1,17 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
-
   def menu
     render 'items/index'
   end
   # GET /items or /items.json
   def index
-    @items = Item.all
+    if params[:category_id]
+      @items = Item.where(category_id: params[:category_id]).page(params[:page]).per(10)
+    else
+      @items = Item.all.page(params[:page]).per(21)
+    end
+
+    @categories = Category.all
   end
 
   # GET /items/1 or /items/1.json
@@ -65,6 +70,12 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def require_login
+      unless session[:client_id]
+        redirect_to login_clients_path, alert: 'Você precisa fazer login'
+      end
     end
 
     # Only allow a list of trusted parameters through.

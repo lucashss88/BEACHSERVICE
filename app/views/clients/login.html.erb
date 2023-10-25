@@ -1,0 +1,13 @@
+<%= form_tag login_clients_path, method: :post do %>
+  <div class="field">
+    <%= label_tag "Nome" %>
+    <%= text_field_tag "client[nome]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "Email" %>
+    <%= email_field_tag "client[email]" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>

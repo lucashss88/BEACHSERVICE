@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show edit update destroy ]
-
+  # before_action :require_login, except: [:login]
 
   # GET /clients or /clients.json
   def index
@@ -10,6 +10,17 @@ class ClientsController < ApplicationController
   # GET /clients/1 or /clients/1.json
   def show
   end
+
+  # def login
+  #   @client = Client.find_by(nome: params[:client][:nome], email: params[:client][:email])
+  #   if @client
+  #     session[:client_id] = @client.id
+  #     redirect_to items_path, notice: 'Login bem-sucedido'
+  #   else
+  #     flash[:alert] = 'Nome ou email incorretos'
+  #     render 'new'
+  #   end
+  # end
 
   # GET /clients/new
   def new
@@ -68,7 +79,13 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # def require_login
+    #   unless session[:client_id]
+    #     redirect_to login_clients_path, alert: 'Você precisa fazer login'
+    #   end
+    # end
+
+    # # Only allow a list of trusted parameters through.
     def client_params
       params.require(:client).permit(:nome, :email, :telefone)
     end

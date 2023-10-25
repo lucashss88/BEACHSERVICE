@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   root "home#index"
   get "items/index"
+  get "items/category/:category_id", to: "items#items_category", as: "items_category"
+
   resources :payments
-  resources :orders
+  resources :orders do
+    member do
+      get :items
+    end
+  end
   resources :items
-  resources :clients, except: [:destroy]
+  resources :clients, except: [:destroy] do
+    post 'login', on: :collection
+  end
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

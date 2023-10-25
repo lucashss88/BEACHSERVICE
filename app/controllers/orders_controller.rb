@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
 
+  def list_items
+    @order = Order.find(params[:id])
+    @items = @order.item
+  end
+
   # GET /orders or /orders.json
   def index
     @orders = Order.all

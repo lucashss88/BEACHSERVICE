@@ -92,6 +92,15 @@
     font-size: 15px;
 }
 
+.btn_conta{
+    margin-left: 42%;
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    background-color: orange;
+    color: white;
+}
+
 .form_client{
     margin-bottom: 10px;
     font-size: 30px;
@@ -180,7 +189,19 @@
 }
 
 .card_categories{
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.card_orders{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.title_order{
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
 }
 
 .img_logo_cardapio{

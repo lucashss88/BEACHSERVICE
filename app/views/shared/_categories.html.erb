@@ -1,7 +1,8 @@
 <div class="card_categories display_show">
-  <% categories.each do |category| %>
-    <div class="card_categories">
-      <button><strong><%= category.nome %></strong></button>
-    </div>
+  <%= form_tag items_path, method: :get do %>
+    <label for="category_id">Selecione uma categoria:</label>
+    <%= select_tag "category_id", options_for_select(@categories.map { |c| [c.nome, c.id] }) %>
+    <%= submit_tag "Filtrar" %>
+    <%= link_to "Todas as categorias", items_path, method: :get  %>
   <% end %>
 </div>

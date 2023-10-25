@@ -1,7 +1,7 @@
 namespace :db do
   desc "TODO"
   task items: :environment do
-    3.times do
+    20.times do
       Item.create!(
         nome: Faker::Food.dish,
         preco_unitario: Faker::Number.between(from: 1, to: 200),

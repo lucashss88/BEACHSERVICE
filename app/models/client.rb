@@ -1,3 +1,3 @@
 class Client < ApplicationRecord
-  validates :nome, presence: true
+  validates :nome, :telefone, :email,  presence: true
 end
