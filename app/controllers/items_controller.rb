@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :require_admin
   def menu
     render 'items/index'
   end
@@ -64,6 +65,15 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def require_admin
+    # code here
+    unless current_admin
+        redirect_to root_path, alert: 'Você precisa fazer login como administrador'
+      end
   end
 
   private

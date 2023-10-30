@@ -132,6 +132,7 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    margin-top: 12%;
 }
 
 .card_home h1{
@@ -210,9 +211,15 @@
 }
 
 .img_logo_home{
-    width: 50px;
-    margin-top: 15%;
+    width: 30px;
+    margin-top: 0%;
     margin-left: 8%;
+}
+
+.img_admin_home{
+    background-image: url("admin/app/assets/images/admin.png");
+    margin-left: 8%;
+    width: 40px;
 }
 
 .img_items{
@@ -241,4 +248,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 730px;
+}
+
+.table_clients{
+    width: 100%;
+    border: 1px solid black;
 }
