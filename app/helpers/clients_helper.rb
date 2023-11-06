@@ -6,4 +6,9 @@ module ClientsHelper
   def last_id
     @last_client = Client.last.id
   end
+
+  def listClients
+    @clients = Client.all
+    render partial: 'shared/clients', locals: { clients: @clients }
+  end
 end

@@ -93,12 +93,12 @@
 }
 
 .btn_conta{
-    margin-left: 42%;
     width: 120px;
     height: 70px;
     font-size: 20px;
     background-color: orange;
     color: white;
+    border-radius: 10px;
 }
 
 .form_client{
@@ -206,7 +206,7 @@
 }
 
 .img_logo_cardapio{
-    width: 70px;
+    width: 80px;
     margin-top: -10px;
 }
 

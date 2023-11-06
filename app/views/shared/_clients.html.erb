@@ -1,0 +1,31 @@
+<div id="clients" style="padding: 20px">
+  <table class="table_clients">
+    <thead class="table_clients">
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @clients.each do |client| %>
+      <tr class="table_clients">
+        <td><%= client.nome %></td>
+        <td><%= client.telefone %></td>
+        <td><%= client.email %></td>
+        <td>
+          <%= link_to "Mostrar cliente", client %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%# @clients.each do |client| %>
+<%#= render client %>
+<!--        <p>-->
+<%#= link_to "Show this client", client %>
+<!--        </p>-->
+<%# end %>

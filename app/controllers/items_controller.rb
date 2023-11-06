@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
-  before_action :require_admin
+  # before_action :require_admin
   def menu
     render 'items/index'
   end
@@ -69,12 +69,12 @@ class ItemsController < ApplicationController
 
   private
 
-  def require_admin
-    # code here
-    unless current_admin
-        redirect_to root_path, alert: 'Você precisa fazer login como administrador'
-      end
-  end
+  # def require_admin
+  #   # code here
+  #   unless current_admin
+  #       redirect_to root_path, alert: 'Você precisa fazer login como administrador'
+  #     end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -82,11 +82,11 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
-    def require_login
-      unless session[:client_id]
-        redirect_to login_clients_path, alert: 'Você precisa fazer login'
-      end
-    end
+    # def require_login
+    #   unless session[:client_id]
+    #     redirect_to login_clients_path, alert: 'Você precisa fazer login'
+    #   end
+    # end
 
     # Only allow a list of trusted parameters through.
     def item_params
