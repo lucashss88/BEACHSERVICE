@@ -3,7 +3,7 @@ module TableHelper
   def listTables
     @clients = Client.all
     @orders = Order.all
-    render partial: 'shared/tables', locals: { clients: @clients}
+    render partial: 'shared/tables', locals: { clients: @clients, orders:@orders}
   end
 
   def tableNumber

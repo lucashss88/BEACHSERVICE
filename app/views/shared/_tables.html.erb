@@ -1,7 +1,8 @@
 <div id="tables" style="padding: 20px">
     <div class="d-flex align-content-end flex-wrap">
         <% @clients.each do |client| %>
-            <%= link_to client do%>
+            <% ord = @orders.where("client = ?", client) -%>
+            <%= link_to prd do%>
                 <div class="card" style="width:16rem; height:12rem; margin: 1em;">
                     <% number = tableNumber -%>
                     <h3 class="card-title" style=><%= number %></h3>
