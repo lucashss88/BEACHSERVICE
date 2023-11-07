@@ -17,10 +17,11 @@
       <div>
         <div id="orders">
           <% @orders.each do |order| %>
-            <%#= render order %>
-            <div>
-              <%= list_items(@order) %>
-            </div>
+            <%= render order %>
+<!--            <div>-->
+              <%#= list_items(@order) %>
+              <%#= order.client_id %>
+<!--            </div>-->
             <p>
               <%= link_to "Show this order", order %>
             </p>
@@ -34,10 +35,10 @@
       <div>
         <div id="orders">
           <% @orders.each do |order| %>
-            <%#= render order %>
-            <div>
-              <%= list_items(@order) %>
-            </div>
+            <%= render order %>
+<!--            <div>-->
+              <%#= order.client_id %>
+<!--            </div>-->
             <p>
               <%= link_to "Show this order", order %>
             </p>
@@ -51,10 +52,10 @@
       <div>
         <div id="orders">
           <% @orders.each do |order| %>
-            <%#= render order %>
-            <div>
-              <%= list_items(@order) %>
-            </div>
+            <%= render order %>
+<!--            <div>-->
+              <%#= list_items(@order) %>
+<!--            </div>-->
             <p>
               <%= link_to "Show this order", order %>
             </p>
