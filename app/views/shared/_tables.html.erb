@@ -1,0 +1,16 @@
+<div id="tables" style="padding: 20px">
+  <div class="d-flex align-content-end flex-wrap">
+    <% @clients.each do |client| %>
+      <% ord = @orders.where("client = ?", client) -%>
+      <%= link_to ord do%>
+        <div class="card" style="width:16rem; height:12rem; margin: 1em;">
+          <% number = tableNumber -%>
+          <h3 class="card-title" style=><%= number %></h3>
+          <div class="card-body">
+            <h3 class="card-text"><%= client.nome %></h3>
+          </div>
+        </div>
+      <%end%>
+    <% end %>
+  </div>
+</div>
