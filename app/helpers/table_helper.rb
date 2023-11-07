@@ -2,8 +2,7 @@ module TableHelper
 
   def listTables
     @clients = Client.all
-    @orders = Order.all
-    render partial: 'shared/tables', locals: { clients: @clients, orders:@orders}
+    render partial: 'shared/tables', locals: { clients: @clients}
   end
 
   def tableNumber
@@ -11,4 +10,13 @@ module TableHelper
     return @number
   end
 
+  def getOrder(client)
+    @orders = Order.all
+    @orders.each do |order|
+      if order.client.id == client.id
+        return order
+      end
+    end
+    return client
+  end
 end
