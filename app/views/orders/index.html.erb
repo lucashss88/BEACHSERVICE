@@ -14,20 +14,6 @@
     <p style="color: green"><%= notice %></p>
     <div style="margin-bottom: 20px">
       <h3 class="title_order">Pedido</h3>
-      <div>
-        <div id="orders">
-          <% @orders.each do |order| %>
-            <%= render order %>
-<!--            <div>-->
-              <%#= list_items(@order) %>
-              <%#= order.client_id %>
-<!--            </div>-->
-            <p>
-              <%= link_to "Show this order", order %>
-            </p>
-          <% end %>
-        </div>
-      </div>
     </div>
 
     <div style="margin-bottom: 20px">
@@ -37,7 +23,7 @@
           <% @orders.each do |order| %>
             <%= render order %>
 <!--            <div>-->
-              <%#= order.client_id %>
+              <%= order.client_id %>
 <!--            </div>-->
             <p>
               <%= link_to "Show this order", order %>

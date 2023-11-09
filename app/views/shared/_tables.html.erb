@@ -1,7 +1,7 @@
 <div id="tables" style="padding: 20px">
   <div class="d-flex align-content-end flex-wrap">
     <% @clients.each do |client| %>
-      <% ord = @orders.where("client = ?", client) -%>
+      <% ord = getOrder(client) -%>
       <%= link_to ord do%>
         <div class="card" style="width:16rem; height:12rem; margin: 1em;">
           <% number = tableNumber -%>

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :load_items, only: [:index]
   # before_action :require_admin
   def menu
     render 'items/index'
@@ -92,4 +93,27 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:nome, :preco_unitario, :descricao, :quantidade, :category_id)
     end
+
+  # Inserindo o cache em memória
+  def load_items
+    # Buscando os intens em cache
+    cached_items = Rails.cache.read('all_items')
+
+    unless cached_items
+      # Se o cache não existe, consulte o banco de dados
+      if params[:category_id]
+        items = Item.where(category_id: params[:category_id]).page(params[:page]).per(10)
+      else
+        items = Item.all.page(params[:page]).per(21)
+      end
+      # Armazena os itens em um objeto serializável, como um array
+      cached_items = items.to_a
+
+      # Armazena esse objeto em cache
+      Rails.cache.write('all_items', cached_items)
+    end
+
+    @items = cached_items
+  end
+
 end

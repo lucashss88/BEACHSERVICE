@@ -44,7 +44,9 @@
         <div class="display_show_items_order">
           <label for="numbers_item"></label><input type="number" id="numbers_item" name="numbers_item" min="0" max="100" />
           <div>
-            <%= button_tag "Add" %>
+            <% id_client = last_id -%>
+            <%= button_to 'Add' %>
+            <%#= button_to 'Add', adicionar_item(id_client, @item) %>
           </div>
         </div>
       </div>

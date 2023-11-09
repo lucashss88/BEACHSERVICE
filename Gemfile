@@ -33,6 +33,12 @@ gem "i18n"
 # criptografia de senhas
 gem "bcrypt", "~> 3.1.7"
 
+#instalação do redis
+gem 'redis'
+
+#intalação para corrigir o cash
+#gem "binding_of_caller"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -56,6 +62,8 @@ gem "bootsnap", require: false
 gem "faker"
 
 gem "kaminari"
+
+gem "better_errors"
 
 gem "bootstrap"
 

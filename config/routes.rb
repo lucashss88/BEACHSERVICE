@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "items/index"
   get "table/index"
   get "items/category/:category_id", to: "items#items_category", as: "items_category"
+  get 'chat', to: 'chat#index', as: 'chat'
 
   resources :payments
   resources :orders do

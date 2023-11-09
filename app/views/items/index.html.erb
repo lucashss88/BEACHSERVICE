@@ -6,7 +6,7 @@
     </div>
     <div class="div_btn_navbar">
       <div style="margin: 5px">
-        <%= button_tag "Chat" %>
+        <%= button_to "Chat", chat_path, method: :get%>
       </div>
       <div style="margin: 5px">
         <%= button_to "Pedido", orders_path, method: :get %>

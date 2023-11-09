@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_name: MyString
+  receiver_name: MyString
+  message: MyText
+  date: 2023-11-08 17:35:25
+  status: 1
+
+two:
+  sender_name: MyString
+  receiver_name: MyString
+  message: MyText
+  date: 2023-11-08 17:35:25
+  status: 1

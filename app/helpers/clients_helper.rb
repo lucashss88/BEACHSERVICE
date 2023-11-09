@@ -1,5 +1,5 @@
 module ClientsHelper
-  def saudacao()
+  def saudacao
     @last_client = Client.last
     render partial: 'shared/last_client', locals: { last_client: @last_client }
   end
