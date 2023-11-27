@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
 
+  include OrdersHelper
   def list_items
     @order = Order.find(params[:id])
     @items = @order.item
@@ -13,6 +14,22 @@ class OrdersController < ApplicationController
 
   # GET /orders/1 or /orders/1.json
   def show
+    @order_items = OrderItem.where(order_id: params[:id])
+    total = 0
+    @order_items.each do |order_item|
+      if order_item.status != 'cancelado'
+        total += order_item.preco_unitario
+      end
+    end
+    @order = Order.find(params[:id])
+    @order.update({valor_total: total})
+  end
+
+  def set_status
+    @status = params[:status]
+    @order_item = OrderItem.find(params[:id])
+    update_value = {status: @status.to_i}
+    @order_item.update(update_value)
   end
 
   # GET /orders/new

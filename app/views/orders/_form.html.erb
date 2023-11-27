@@ -27,11 +27,6 @@
   </div>
 
   <div>
-    <%= form.label :item_id, style: "display: block" %>
-    <%= form.collection_select(:item_id, Item.all, :id, :nome, prompt: "Selecione algum item") %>
-  </div>
-
-  <div>
     <%= form.label :client_id, style: "display: block" %>
     <%= form.collection_select(:client_id, Client.all, :id, :nome, prompt: "Selecione um Cliente") %>
   </div>

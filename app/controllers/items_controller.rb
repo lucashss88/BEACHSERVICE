@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
   before_action :load_items, only: [:index]
+  protect_from_forgery with: :null_session
+  include ItemsHelper
   # before_action :require_admin
   def menu
     render 'items/index'
@@ -18,6 +20,15 @@ class ItemsController < ApplicationController
 
   # GET /items/1 or /items/1.json
   def show
+  end
+
+  def order_item
+    @quant = params[:quant]
+    @client = params[:id_client]
+    @item_id = params[:id_item]
+
+    adicionar_item(@client, @quant, @item_id)
+
   end
 
   # GET /items/new

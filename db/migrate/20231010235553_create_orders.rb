@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.float :valor_total
       t.boolean :status
       t.integer :numero_mesa
-      t.references :item, null: false, foreign_key: true
       t.references :client, null: false, foreign_key: true
 
       t.timestamps
