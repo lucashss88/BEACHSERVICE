@@ -1,4 +1,6 @@
-
+<head>
+  <%= csrf_meta_tags %>
+</head>
     <% if controller_name == 'items' && action_name == 'index' %>
       <div id="<%= dom_id item %>" class="card_itens" style="background-color: white; border-radius: 5%; font-size: 12px">
         <div>
@@ -37,16 +39,49 @@
           <%= item.descricao %>
         </p>
 
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+        <script>
+
+          let jsValue
+
+          function getValue ()
+          {
+            jsValue = document.getElementById('quant_itens').value
+          };
+
+          function addItem () {
+            window.location.href = '/items'
+            $.ajax({
+              url: '<%= order_item_path %>',
+              method: 'POST',
+              headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: { quant: jsValue,
+                      id_client: '<%= last_id %>',
+                      id_item: '<%= @item.id %>',
+                    },
+              success: function() {
+                console.log('Success')
+              },
+              error: function() {
+                console.error('Failed to call Ruby function');
+              }
+            });
+          };
+        </script>
+
         <p>
           <strong>Categoria:</strong>
           <%= item.category.nome %>
         </p>
         <div class="display_show_items_order">
-          <label for="numbers_item"></label><input type="number" id="numbers_item" name="numbers_item" min="0" max="100" />
           <div>
-            <% id_client = last_id -%>
-            <%= button_to 'Add' %>
-            <%#= button_to 'Add', adicionar_item(id_client, @item) %>
+            <label for="numbers_item"></label>
+            <input type="number" id="quant_itens" name="quant_itens" min="0" max="100" onchange = "getValue()"/>
+            <button onclick="addItem()">Add</button>
           </div>
         </div>
       </div>

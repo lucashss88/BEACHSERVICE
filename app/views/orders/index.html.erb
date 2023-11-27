@@ -16,23 +16,6 @@
       <h3 class="title_order">Pedido</h3>
     </div>
 
-    <div style="margin-bottom: 20px">
-      <h3 class="title_order">Em preparo</h3>
-      <div>
-        <div id="orders">
-          <% @orders.each do |order| %>
-            <%= render order %>
-<!--            <div>-->
-              <%= order.client_id %>
-<!--            </div>-->
-            <p>
-              <%= link_to "Show this order", order %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
     <div style="margin-bottom: 20px;">
       <h3 class="title_order">Pronto</h3>
       <div>

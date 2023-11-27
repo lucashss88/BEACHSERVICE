@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_08_203525) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_25_220952) do
   create_table "categories", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -48,20 +48,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_203525) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0
     t.index ["category_id"], name: "index_items_on_category_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "item_id", null: false
+    t.string "item_nome"
+    t.float "preco_unitario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.index ["item_id"], name: "index_order_items_on_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.float "valor_total"
     t.boolean "status"
     t.integer "numero_mesa"
-    t.integer "item_id", null: false
     t.integer "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_orders_on_client_id"
-    t.index ["item_id"], name: "index_orders_on_item_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -77,8 +86,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_203525) do
   end
 
   add_foreign_key "items", "categories"
+  add_foreign_key "order_items", "items"
+  add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "clients"
-  add_foreign_key "orders", "items"
   add_foreign_key "payments", "clients"
   add_foreign_key "payments", "orders"
 end

@@ -1,10 +1,6 @@
 class Item < ApplicationRecord
-  belongs_to :order
+  has_many :order_items
+  has_many :orders,  through: :order_items
   belongs_to :category
   # accepts_nested_attributes_for :category
-  enum status: {
-      pedido: 0,
-      em_preparo: 1,
-      pronto: 2
-    }
 end

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "items/category/:category_id", to: "items#items_category", as: "items_category"
   get 'chat', to: 'chat#index', as: 'chat'
 
+  post "items/order_item", to: 'items#order_item', as: 'order_item'
+  post "order/set_status", to: 'orders#set_status', as: 'set_status'
+
   resources :payments
   resources :orders do
     member do
