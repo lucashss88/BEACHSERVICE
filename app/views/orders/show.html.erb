@@ -33,10 +33,10 @@
         <% if item.status == 'pedido' %>
           <div div class="card" style="width:18rem; height:18rem; margin: 1em;">
             <div class="card-img-top">
-              <p><%= image_tag "dish.png", class:"card-img-top",style: "width:14rem; height:10rem;"%></p>
+              <p><%= image_tag "dish.png", class: "card-img-top",style: "width:14rem; height:10rem;"%></p>
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
-            <p class="font-weight-light" style="color:gray"> Pendente </p>
+            <p class="font-weight-light" style="color:grey"> Pendente </p>
             <div>
               <button onclick="setStatus(1, <%= item.id %>)" class="btn btn-warning">Aceitar</button>
               <button onclick="setStatus(3, <%= item.id %>)" class="btn btn-danger">Cancelar</button>
@@ -53,7 +53,7 @@
         <% if item.status == 'em_preparo'%>
           <div div class="card" style="width:18rem; height:18rem; margin: 1em;">
             <div class="card-img-top">
-              <p><%= image_tag "dish.png", class:"card-img-top",style: "width:14rem; height:10rem;"%></p>
+              <p><%= image_tag "dish.png", class: "card-img-top",style: "width:14rem; height:10rem;"%></p>
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
             <p class="font-weight-light" style="color:yellow"> Em Preparo </p>
@@ -73,7 +73,7 @@
         <% if item.status == 'pronto'%>
           <div div class="card" style="width:18rem; height:18rem; margin: 1em;">
             <div class="card-img-top">
-              <p><%= image_tag "dish.png", class:"card-img-top",style: "width:14rem; height:10rem;"%></p>
+              <p><%= image_tag "dish.png", class: "card-img-top",style: "width:14rem; height:10rem;"%></p>
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
             <p class="font-weight-light" style="color:green"> Pronto </p>
@@ -89,7 +89,7 @@
         <% if item.status == 'cancelado'%>
           <div div class="card" style="width:18rem; height:18rem; margin: 1em;">
             <div class="card-img-top">
-              <p><%= image_tag "dish.png", class:"card-img-top",style: "width:14rem; height:10rem;"%></p>
+              <p><%= image_tag "dish.png", class: "card-img-top",style: "width:14rem; height:10rem;"%></p>
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
             <p class="font-weight-light" style="color:red"> Cancelado </p>
