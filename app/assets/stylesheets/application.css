@@ -254,3 +254,17 @@
     width: 100%;
     border: 1px solid black;
 }
+
+.display_show_buttons{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+.display_show_finantial{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    margin: 10px;
+}

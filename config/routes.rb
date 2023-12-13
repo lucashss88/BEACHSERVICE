@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
   get "items/index"
   get "table/index"
+  get "finantial/index"
   get "items/category/:category_id", to: "items#items_category", as: "items_category"
   get 'chat', to: 'chat#index', as: 'chat'
 
@@ -15,9 +16,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items
-  resources :clients, except: [:destroy] do
-    post 'login', on: :collection
-  end
+  resources :clients, except: [:destroy]
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

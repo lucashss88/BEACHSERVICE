@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
 
   include OrdersHelper
+  include ClientsHelper
   def list_items
     @order = Order.find(params[:id])
     @items = @order.item
@@ -9,9 +10,15 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    # @orders = Order.all
+    client_id = @last_client
+    @orders = Order.where(params[client_id: client_id])
+    @client_orders = @orders
   end
 
+  # def client_user
+  #   @client_orders = current_user.client.orders
+  # end
   # GET /orders/1 or /orders/1.json
   def show
     @order_items = OrderItem.where(order_id: params[:id])
@@ -80,15 +87,13 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def order_params
-      params.require(:order).permit(:valor_total, :status, :numero_mesa, :item_id, :client_id)
-    end
-
-
+  # Only allow a list of trusted parameters through.
+  def order_params
+    params.require(:order).permit(:valor_total, :status, :numero_mesa, :item_id, :client_id)
+  end
 end

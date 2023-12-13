@@ -3,25 +3,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  function setStatus (status, id) {
-    $.ajax({
-      url: '<%= set_status_path %>',
-      method: 'POST',
-      headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-      },
-      data: { status: status,
-        id: id,
-      },
-      success: function() {
-        console.log(id);
-      },
-      error: function() {
-        console.error('Failed to call Ruby function');
-      }
-    });
-    location.reload();
-  };
+    function setStatus (status, id) {
+        $.ajax({
+            url: '<%= set_status_path %>',
+            method: 'POST',
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: { status: status,
+                id: id,
+            },
+            success: function() {
+                console.log(id);
+            },
+            error: function() {
+                console.error('Failed to call Ruby function');
+            }
+        });
+        location.reload();
+    };
 </script>
 
 <%= render @order %>
@@ -33,14 +33,14 @@
         <% if item.status == 'pedido' %>
           <div div class="card" style="width:18rem; height:18rem; margin: 1em;">
             <div class="card-img-top">
-              <p><%= image_tag "dish.png", class: "card-img-top",style: "width:14rem; height:10rem;"%></p>
+              <p><%= image_tag "dish.png", class: "card-img-top", style: "width:14rem; height:10rem;"%></p>
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
             <p class="font-weight-light" style="color:grey"> Pendente </p>
-            <div>
-              <button onclick="setStatus(1, <%= item.id %>)" class="btn btn-warning">Aceitar</button>
-              <button onclick="setStatus(3, <%= item.id %>)" class="btn btn-danger">Cancelar</button>
-            </div>
+            <!--            <div>-->
+            <!--              <button onclick="setStatus(1, <%#= item.id %>)" class="btn btn-warning">Aceitar</button>-->
+            <!--              <button onclick="setStatus(3, <%#= item.id %>)" class="btn btn-danger">Cancelar</button>-->
+            <!--            </div>-->
           </div>
         <% end %>
       <% end %>
@@ -57,10 +57,10 @@
             </div>
             <h3 class="card-title"><%= item.item_nome %></h3>
             <p class="font-weight-light" style="color:yellow"> Em Preparo </p>
-            <div>
-              <button onclick="setStatus(2, <%= item.id %>)" class="btn btn-success">Pronto</button>
-              <button onclick="setStatus(3, <%= item.id %>)" class="btn btn-danger">Cancelar</button>
-            </div>
+            <!--            <div>-->
+            <!--              <button onclick="setStatus(2, <%#= item.id %>)" class="btn btn-success">Pronto</button>-->
+            <!--              <button onclick="setStatus(3, <%#= item.id %>)" class="btn btn-danger">Cancelar</button>-->
+            <!--            </div>-->
           </div>
         <% end %>
       <% end %>
@@ -97,15 +97,52 @@
         <% end %>
       <% end %>
     </div>
-  </div>     
+  </div>
+  <!--  <div style="justify-content: center; text-align: center; margin-top: 15px"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal12">-->
+  <!--    Pedir Conta-->
+  <!--  </button></div>-->
+  <div style="justify-content: center; text-align: center; margin-top: 15px">
+    <!-- Botão para confirmar pagamento -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Pedir Conta</button>
+  </div>
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Escolha a forma de pagamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Valor total: <%= @order.valor_total %></p>
+          <!-- Seu select de formas de pagamento -->
+          <select class="form-select" aria-label="Default select example" style="margin-bottom: 15px">
+            <option selected>Escolha a forma de pagamento</option>
+            <option value="1">Cartão de Crédito</option>
+            <option value="2">Dinheiro</option>
+            <option value="3">Pix</option>
+            <!-- ... mais opções ... -->
+          </select>
+          <!-- Botão para efetuar pagamento -->
+          <button type="button" class="btn btn-primary" onclick="simulatePayment()">Efetuar Pagamento</button>
+          <!--          <div id="totalValue" style="margin-top: 10px;"></div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      function simulatePayment() {
+          // Simulação de um pagamento (pode ser uma requisição AJAX simulada)
+          setTimeout(() => {
+              alert(`Pagamento efetuado com sucesso!`);
+              // Fechar o modal após o pagamento
+              $('#exampleModal2').modal('hide');
+          }, 2000); // Tempo de simulação, 2 segundos nesse caso
+      }
+  </script>
+
+  <div class="display_show">
+    <i class="fas fa-arrow-left" style="margin-right: 2px"></i>
+    <%= link_to "VOLTAR ", items_index_path %>
+  </div>
 </div>
-
-
-<!-- 
-<div>
-  <%= link_to "Edit this order", edit_order_path(@order) %> |
-  <%= link_to "Back to orders", orders_path %>
-
-  <%= button_to "Destroy this order", @order, method: :delete %>
-</div>
--->

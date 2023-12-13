@@ -6,38 +6,47 @@
     </div>
     <div class="div_btn_navbar">
       <div style="margin: 5px">
-        <%= button_to "Chat", chat_path, method: :get%>
+        <%= button_tag "Chat" %>
       </div>
-      <div style="margin: 5px">
-        <%= button_to "Pedido", orders_path, method: :get %>
-      </div>
-      <div style="margin: 5px">
-        <%# nome = nome_admin %>
-        <%# id = last_id %>
-        <%#= button_tag nome, class: "btn_perfil_cardapio" %>
-      </div>
-      <div style="margin: 5px">
-        <%= link_to 'Logout', root_path, method: :delete %>
-      </div>
+<!--      <div style="margin: 5px">-->
+        <%#= button_to "Pedido", order_path(Order.last.id), method: :get %>
+<!--      </div>-->
+      <!--      <div style="margin: 5px">-->
+      <%# if user_signed_in? %>
+      <%# nome = current_user.email %>
+      <%#= button_to nome %>
+      <%# end %>
+      <!--      </div>-->
+<!--      <div style="margin: 5px">-->
+        <%# if user_signed_in? %>
+          <%#= button_to "Logout", destroy_user_session_path, method: :delete %>
+        <%# end %>
+<!--      </div>-->
+      <!--      <div style="margin: 5px">-->
+      <%#= link_to 'Logout', root_path, method: :delete %>
+      <!--      </div>-->
     </div>
   </div>
 
   <div style="margin-bottom: 40px; margin-top: 10px">
-<!--    <h4>Categorias</h4>-->
+<!--    <h4>Bem vindo, <%#= current_user.email %>!</h4>-->
+    <!--    <h4>Categorias</h4>-->
     <%= list %>
 
   </div>
   <div class="index_show">
-      <p style="color: green"><%= notice %></p>
-      <div id="items" class="display_show" style="flex-wrap: wrap">
-        <% @items.each do |item| %>
-          <div class="display_show" style="margin: 10px">
-            <%= render item %>
-          </div>
-        <% end %>
-      </div>
+    <p style="color: green"><%= notice %></p>
+    <div id="items" class="display_show" style="flex-wrap: wrap">
+      <% @items.each do |item| %>
+        <div class="display_show" style="margin: 10px">
+          <%= render item %>
+        </div>
+      <% end %>
+    </div>
 
-      <%= link_to "New item", new_item_path %>
+    <%#= link_to "New item", new_item_path %>
   </div>
-  <%= paginate @items %>
+  <div class="index_show" style="justify-content: center; text-align: center">
+    <%= paginate @items %>
+  </div>
 </div>

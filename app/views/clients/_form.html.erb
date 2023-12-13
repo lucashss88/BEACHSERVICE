@@ -10,11 +10,11 @@
       </ul>
     </div>
   <% end %>
-<!--  <div class="card_home_maior">-->
-<!--    <div class="card_home">-->
+  <!--  <div class="card_home_maior">-->
+  <!--    <div class="card_home">-->
 
-<!--    </div>-->
-<!--  </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
   <div class="card_form_client">
     <div class="form_client">
       <%= form.label :nome, style: "margin-right: 5%;" %>
@@ -31,14 +31,20 @@
       <%= form.text_field :telefone %>
     </div>
 
+    <div class="form_client">
+      <%= form.label :user_id %>
+      <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :email, { selected: current_user.id } %>
+    </div>
+
+
     <% if controller_name == 'clients' && action_name == 'new' %>
       <div style="width: 100%">
         <%= button_to "CADASTRAR", items_index_path, method: :get, class: "btn_cadastrar", style: "margin-top: 5%;" %>
       </div>
-      <div class="index_show" style="margin-top: 20px">
-        <h6>Já possui cadastro? Faça o login.</h6>
-        <%= button_to "LOGIN", items_index_path, method: :get, class: "btn_login" %>
-      </div>
+      <!--      <div class="index_show" style="margin-top: 20px">-->
+      <!--        <h6>Já possui cadastro? Faça o login.</h6>-->
+      <%#= button_to "LOGIN", items_index_path, method: :get, class: "btn_login" %>
+      <!--      </div>-->
     <% end %>
 
     <% if controller_name == 'clients' && action_name == 'edit' %>
