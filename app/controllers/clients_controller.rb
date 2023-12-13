@@ -24,6 +24,8 @@ class ClientsController < ApplicationController
 
   # GET /clients/new
   def new
+    @id = params[:id]
+    cookies[:numero_mesa] = {value: @id, expires:20.hours.from_now, httponly: true}
     @client = Client.new
   end
 
@@ -34,10 +36,15 @@ class ClientsController < ApplicationController
   # POST /clients or /clients.json
   def create
     @client = Client.new(client_params)
-
     respond_to do |format|
       if @client.save
-        format.html { redirect_to client_url(@client), notice: "Client was successfully created." }
+        @order = Order.new({
+          client_id: @client.id,
+          numero_mesa: cookies[:numero_mesa]
+        })
+        @order.save
+
+        format.html { redirect_to "/items", notice: "Client was successfully created." }
         format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,7 +69,6 @@ class ClientsController < ApplicationController
   # DELETE /clients/1 or /clients/1.json
   def destroy
     @client.destroy
-
     respond_to do |format|
       format.html { redirect_to clients_url, notice: "Client was successfully destroyed." }
       format.json { head :no_content }

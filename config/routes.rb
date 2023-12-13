@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "home#index"
   get "items/index"
   get "table/index"
+  get "clients/new/:id", to: 'clients#new'
   get "items/category/:category_id", to: "items#items_category", as: "items_category"
   get 'chat', to: 'chat#index', as: 'chat'
 
